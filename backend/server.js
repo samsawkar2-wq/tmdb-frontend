@@ -16,10 +16,8 @@ app.get('/', (req, res) => {
 });
 
 // Wildcard route to proxy all TMDB requests
-app.get('/api/tmdb/*', async (req, res) => {
-    try {
-        // Extract the path after /api/tmdb/
-        const endpoint = req.params[0];
+app.get('/api/tmdb/:endpoint(*)', async (req, res) => {
+    const endpoint = req.params.endpoint;
         
         // Construct the full TMDB URL
         const tmdbUrl = `${TMDB_BASE_URL}/${endpoint}`;

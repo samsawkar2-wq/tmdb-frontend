@@ -15,12 +15,11 @@ app.get('/', (req, res) => {
     res.send('TMDB Proxy Backend is running!');
 });
 
-// TMDB Proxy Route
-app.get('/api/tmdb/:endpoint(*)', async (req, res) => {
+// TMDB Proxy (Render compatible)
+app.use('/api/tmdb', async (req, res) => {
     try {
-        const endpoint = req.params.endpoint;
-
-        const tmdbUrl = `${TMDB_BASE_URL}/${endpoint}`;
+        const endpoint = req.url;
+        const tmdbUrl = `${TMDB_BASE_URL}${endpoint}`;
 
         const params = {
             ...req.query,

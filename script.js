@@ -1,5 +1,5 @@
 // The API Key is securely handled by our custom proxy backend.
-const SOURCE_URL ='https://tmdb-backend-v28j.onrender.com/api/tmdb';
+const SOURCE_URL ='https://tmdb-backend-v28j.onrender.com/api/tmdb/';
 
 const main=document.querySelector('.main');
 const ipage=document.querySelector('.more-info-page');

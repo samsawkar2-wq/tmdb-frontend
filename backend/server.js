@@ -10,19 +10,18 @@ const PORT = process.env.PORT || 5000;
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 
-// Health check endpoint
+// Health check
 app.get('/', (req, res) => {
     res.send('TMDB Proxy Backend is running!');
 });
 
-// Wildcard route to proxy all TMDB requests
+// TMDB Proxy Route
 app.get('/api/tmdb/:endpoint(*)', async (req, res) => {
-    const endpoint = req.params.endpoint;
-        
-        // Construct the full TMDB URL
+    try {
+        const endpoint = req.params.endpoint;
+
         const tmdbUrl = `${TMDB_BASE_URL}/${endpoint}`;
-        
-        // Pass along all query parameters, but inject our API key
+
         const params = {
             ...req.query,
             api_key: TMDB_API_KEY

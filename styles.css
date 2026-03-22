@@ -1,0 +1,547 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', 'poppinis';
+}
+
+html{
+    overflow-x: hidden;
+    height: 100%;
+    
+}
+body{
+    background-size:cover;                    
+    background-repeat: no-repeat;             
+    background-attachment: fixed;             
+    background-position: center;  
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    overflow-x: hidden;
+    /* background: linear-gradient( #9600ff , #aebaf8,#9600ff ); */
+
+    background: linear-gradient( #1d2041 ,   #2a3171 ,   #241c2e ,  #181c3c  );
+}
+
+.title{
+    padding: 1rem 1rem;
+}
+
+.title h1, .movie-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+.container{
+    display: flex;
+}
+
+.vertical-nav{
+    box-shadow: 5px 0 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top:0;
+    height:100vh;
+    width:5.8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    z-index: 1000;
+}
+#logo img{
+   padding-left: 13px;
+}
+#logo p{
+   font-size: 1rem;
+}
+
+#nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3.8rem;
+    padding: 2rem 0;
+    cursor:pointer;
+    transition: .3s;
+}
+#nav p:hover{
+    transform: scale(1.15);
+}
+
+#nav-search{
+    position:relative;
+    z-index: 1000;
+}
+#search{
+    border-radius: 1rem;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 99999;
+    margin-left:10px ;
+    width: 300px;
+    height: 35px;
+    opacity: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    
+    transition: all 0.3s ease;
+}
+#search.show{
+    opacity: 1;
+
+}
+
+.main{
+    margin-left: 5.8vw;
+    flex: 1;
+    max-width: calc(100vw - 5.8vw);
+}
+
+
+@media (max-width: 1050px){
+    .vertical-nav{
+        width:50px;
+        
+    }
+    .main{
+        margin-left: 50px;
+        flex: 1;
+        max-width: calc(100vw - 50px);
+    }
+    #search{
+        width: 50vw;
+        height: 35px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 15px;
+        max-width: 300px;
+    }
+    #logo img{
+        padding-left: .7rem;
+    }
+    #logo p{
+        font-size: .8rem;
+    }
+    .vertical-nav img{
+        width: 30px;
+    }
+}
+
+
+
+.hero-banner{
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.hero-track{
+    margin-left: 250px;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    transition: transform .8s ease-in-out;
+}
+
+.hero-slide{
+    min-width: 70%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transform: scale(0.85);
+    transition: 0.6s;
+    opacity: 0.5;
+}
+
+.hero-slide.active {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+.hero-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 50%;
+    z-index: 20;
+}
+.hero-btn img{
+    transform: translateY(2px);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+#banner, #info-banner{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    transition: 0.3s ;
+    object-position: center;
+}
+
+.active:hover img{
+   filter: brightness(80%);
+   transition: .3s;
+   transform: scale(1.05);
+}
+
+.banner-content{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 500px;
+}
+
+.movie-title{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.movie-desc{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.banner-content h1, .banner-content p {
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.info-button{
+    font-size: .9rem;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: .65rem 1.3rem;
+    border-radius: 20px;
+    cursor:pointer;
+    transition: .3s;
+}
+
+
+.info-button:hover{
+    background: darkred;
+    transform: scale(1.05);
+}
+
+.trending-section h1, .top-movies-section h1, .tv-airing-today-section h1,.tv-popular-section h1,.tv-top_rated-section h1, .coming-soon-section h1, .new-releases-section h1{
+    margin-top: 3px;
+    padding: 3px;
+    font-size: 50px;
+}
+.trending-section , .top-movies-section , .tv-airing-today-section,.tv-popular-section,.tv-top_rated-section, .coming-soon-section, .new-releases-section{
+    width: 100%;
+    overflow-x:hidden ;
+}
+
+.section-container {
+    position: relative;  /* Buttons position relative to this */
+    width: 100%;
+}
+
+.movie-row-wrapper {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;  
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.movie-row {
+    display: flex;
+    gap: 10px; 
+    height: 350px;
+    scroll-behavior: smooth;  
+    scroll-snap-type: x mandatory; 
+}
+
+.movie-card {
+    min-width: 200px;      
+    border-radius: 10px;
+    height: 100%;
+    overflow: hidden;
+    scroll-snap-align: start;  
+    position: relative;
+    cursor: pointer;
+}
+
+.movie-card img {
+    display: block;
+    height: 100%;
+    padding: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 2rem;
+}
+
+.movie-info{
+    position:absolute;
+    bottom: 0;
+    left: 10px;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.movie-info h1,.movie-info h3{
+    margin:0;
+    overflow: hidden;
+    text-overflow:ellipsis ;
+    line-height: 2.5rem;
+    z-index: 2;
+}
+
+.movie-card:hover .movie-info{
+    transform: translateY(-5%);
+    
+}
+.movie-card:hover img{
+    filter:brightness(60%);
+    transform: scale(1.05);
+}
+
+*{
+  /* For Firefox */
+  scrollbar-width: none; 
+  /* For Internet Explorer and Edge */
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scroll-btn{
+    position: absolute;
+    top: 94%;
+    transform: translateY(-500%);
+    background-color: rgba(0,0,0,0.5);
+    background-color: black;
+    border: none;
+    color: white;
+    height: 33px;
+    width:33px;
+    cursor: pointer;
+    transition: .3s;
+    border-radius:15.6px ;
+    opacity: 0;
+    z-index: 100;
+}
+
+.movie-row-wrapper:hover .scroll-btn {
+    opacity: 1; /* appear on hover of row */
+}
+
+
+.scroll-btn:click{
+    background-color: gray;
+}
+
+.right-btn{
+    right:0;
+}
+
+/* MORE INFO PAGE */
+
+.display_none{
+    display:none;
+}
+
+.more-info-page{
+    padding: 0rem;
+    position: relative;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.info-hero-banner{
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    border-radius: 2rem;
+    border-radius: 20px;
+    transform: scale(0.85);
+    opacity: 0.9;
+    
+}
+
+.info-hero-banner img{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.info-section{
+    display: flex;
+}
+
+.poster-section{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#info-poster{
+    border-radius: 2rem;
+    margin-top: 20px;
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+}
+
+.info{
+    flex: 1;
+    margin-top: 20px;
+    margin-left: 2rem;
+}
+.info h1{
+    font-size: 60px;
+}
+.info h2 {
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+}
+
+.info p {
+    margin-top: 1rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+#info-back, #search-back{
+    position: absolute;
+    padding: 8px 5px;
+    border-radius: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    width:70px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Search Result Section */
+
+.search-info-page{
+    margin-left: 90px;
+    flex: 1;
+    width:100%;
+    max-width: calc(100vw - 2rem);
+}
+.searched-items{
+    margin-top: 2rem;
+}
+#search-found-text{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.searched-movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+.searched-movie-card{   
+    border-radius: 10px;
+    width: 220px;
+    overflow: hidden;
+    scroll-snap-align: start;  
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.searched-movie-card img {
+    display: block;
+    height: 70%;
+    padding: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 2rem;
+}
+
+.searched-movie-info{
+    height: 30%;
+    color: white;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+
+
+.searched-movie-card:hover img{
+    opacity: 60%;
+    transform: scale(1.05);
+}
+
+@media (max-width: 800px){
+    
+    .poster-section{
+        width:250px;
+        margin:0 auto;
+    }
+
+}
+
+@media (max-width: 550px){
+    .more-info-page{
+        padding: 0rem;
+        position: relative;
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+
+    .info-hero-banner{
+        position: absolute;
+        opacity: 40%;
+        z-index: 0;
+    }
+    .info-section{
+        display: block;
+    }
+    .info{
+        margin-top: 15vh;
+    }
+    .poster-section{
+        width:300px;
+        margin-top: 5vh;
+        z-index: 10;
+        overflow: visible;
+        position: relative;
+        box-shadow: 0 0 1px rgba(228, 6, 6, 0.5);
+    }
+    .poster-section img{
+        border: 2px solid rgb(255, 255, 255);
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+}

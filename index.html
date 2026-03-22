@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movieverse</title>
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap' rel='stylesheet'>
+                
+</head>
+<body>
+    
+    <div class="container">
+        <div class="vertical-nav">
+            <div id="logo">
+                <a href=""><img id="logo-img" src="assets/logo.png">   </a>
+                <p>MovieVerse</p>
+            </div> 
+            <div id="nav">
+                <p id="nav-search">
+                    <img id="nav-search-img" src="assets/search.png">
+                    <input id="search" class="display_none" type="text" placeholder="search movies or tv shows">
+                </p>
+                <p id="nav-home"><img src="assets/home.png"></p>
+                <p id="nav-trending"><img src="assets/trending.png"></p>
+                <p id="nav-tv"><img src="assets/top-rated.png"></p>
+                <p id="nav-upcoming"><img src="assets/coming-soon.png"></p>
+                
+            </div>
+        </div>
+        <div class="main">
+            <div class="hero-banner">
+
+                <div class="hero-track">
+
+                </div>
+                <button class="hero-btn prev"><img src="assets/left-scroll.png" alt=""></button>
+                <button class="hero-btn next"><img src="assets/right-scroll.png" alt=""></button>
+
+                <!-- <img src="" alt="" id="banner">
+                <div class="banner-content">
+                    <h1 class="movie-title"></h1>
+                    <p class="movie-desc"></p>
+                    <button class="info-button">More Info</button>
+                </div> -->
+            </div>
+
+            
+
+            <section class="top-movies-section">
+                <h1>Top Rated Movies</h1>
+                <hr color="red" width="300px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            <!-- movie card -->
+                        </div>
+                         
+                        <!-- left scroll and right scroll button -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="trending-section">
+                <h1>Trending Movies</h1>
+                <hr color="red" width="300px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-releases-section">
+                <h1>New Releases</h1>
+                <hr color="red" width="270px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            
+                        </div>
+                     </div>
+                </div>
+            </section>
+
+            <section class="tv-airing-today-section">
+                <h1>Airing Today TV Shows</h1>
+                <hr color="red" width="400px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tv-popular-section">
+                <h1>Popular TV Shows</h1>
+                <hr color="red" width="320px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tv-top_rated-section">
+                <h1>Top Rated TV Shows</h1>
+                <hr color="red" width="350px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="coming-soon-section">
+                <h1>Coming Soon</h1>
+                <hr color="red" width="250px">
+                <div class="section-container">
+                    <div class="movie-row-wrapper">  
+                        <div class="movie-row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!--  -->
+    </div>
+
+    <div class="more-info-page display_none">
+            <div class="info-hero-banner">
+                <img id="info-banner" src="" alt="">
+            </div>
+            <div class="info-section">
+                <div class="poster-section">
+                    <img id="info-poster" src="" alt="">
+                </div>
+                <div class="info">
+                    <h1>title</h1>
+                    <h2>release date</h2>
+                    <h2>rating</h2>
+                    <p>description</p>
+                </div>
+            </div>
+            <button id="info-back">Back</button>
+        </div>
+
+        <div class="search-info-page  display_none">
+            <h1 id="search-found-text"> </h1>
+            <hr color="red">
+            <div class="searched-items">
+                <div class="searched-movie-list">
+                    
+                </div>  
+            </div>
+            <button id="search-back">Back</button>
+        </div>
+    <script type="module" src="script.js"></script>
+    
+</body>
+</html>
+
